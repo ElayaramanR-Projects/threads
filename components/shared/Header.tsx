@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { OrganizationSwitcher, SignOutButton, SignedIn } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
 
 function Header() {
 	const isUserLoggedIn = true;
@@ -29,6 +30,7 @@ function Header() {
 
 				<OrganizationSwitcher
 					appearance={{
+						baseTheme: dark,
 						elements: {
 							OrganizationSwitcherTrigger: 'py-2 px-4',
 						},

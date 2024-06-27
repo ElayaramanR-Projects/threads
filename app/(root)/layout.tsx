@@ -3,10 +3,10 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 
-import SidePanel from '@/components/shared/SidePanel';
+import RightSidebar from '@/components/shared/RightSidebar';
 import Header from '@/components/shared/Header';
-import NavBar from '@/components/shared/Navbar';
-import Footer from '@/components/shared/Footer';
+import SideNavBar from '@/components/shared/SideNavBar';
+import BottomNavBar from '@/components/shared/BottomNavBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,16 +23,16 @@ export default function RootLayout({
 	return (
 		<ClerkProvider>
 			<html lang='en'>
-				<body className={inter.className}>
+				<body className={`${inter.className} w-full h-full`}>
 					<Header />
-					<main>
-						<NavBar />
+					<main className='flex flex-row'>
+						<SideNavBar />
   						<section className='main-container'>
   							<div className='w-full max-w-4xl'>{children}</div>
   						</section>
-						<SidePanel />
+						<RightSidebar />
 					</main>
-					<Footer />
+					<BottomNavBar />
 				</body>
 			</html>
 		</ClerkProvider>

@@ -7,12 +7,12 @@ import { usePathname, useRouter } from 'next/navigation';
 import { OrganizationSwitcher, SignOutButton, SignedIn } from '@clerk/nextjs';
 import { Router } from 'next/router';
 
-function NavBar() {
+function SideNavBar() {
 	const router = useRouter();
 	const currentPathName = usePathname();
 
 	return (
-		<section className='custom-scrollbar navbar'>
+		<section className='custom-scrollbar side_navbar'>
 			<div className='flex w-full flex-1 flex-col gap-6 px-6'>
 				{navbarLinks.map((link) => {
 					const isActive =
@@ -22,7 +22,7 @@ function NavBar() {
 						<Link
 							key={link.label}
 							href={link.route}
-							className={`navbar_link ${isActive && 'bg-primary-500'}`}>
+							className={`side_navbar_link ${isActive && 'bg-primary-500'}`}>
 							<Image
 								src={link.imgURL}
 								alt={link.label}
@@ -36,7 +36,7 @@ function NavBar() {
 			<div className='mt-10 px-6'>
 				<SignedIn>
 					<SignOutButton redirectUrl='/sign-in'>
-						<div className='flex cursor-pointer gap-4 pe-4'>
+						<div className='flex cursor-pointer gap-4 px-4'>
 							<Image
 								src='/assets/logout.svg'
 								alt='logout'
@@ -46,8 +46,8 @@ function NavBar() {
 						</div>
 					</SignOutButton>
 				</SignedIn>
-			</div>
+			</div> 
 		</section>
 	);
 }
-export default NavBar;
+export default SideNavBar;
