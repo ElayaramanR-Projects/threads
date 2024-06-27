@@ -74,11 +74,11 @@
     @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5;
   }
 
-  .leftsidebar {
+  .navbar {
     @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-dark-4 bg-dark-2 pb-5 pt-28 max-md:hidden;
   }
 
-  .leftsidebar_link {
+  .navbar_link {
     @apply relative flex justify-start gap-4 rounded-lg p-4;
   }
 

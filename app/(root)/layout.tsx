@@ -27,9 +27,9 @@ export default function RootLayout({
 					<Header />
 					<main>
 						<NavBar />
-						<section className='main-container'>
-							<div className='w-full max-w-4xl'>{children}</div>
-						</section>
+  						<section className='main-container'>
+  							<div className='w-full max-w-4xl'>{children}</div>
+  						</section>
 						<SidePanel />
 					</main>
 					<Footer />
